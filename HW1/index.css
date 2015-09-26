@@ -1,0 +1,15 @@
+
+.new-task:hover {
+    color: #FFFFBB;
+    background-color: #CCCCFF;
+}
+
+.remove-task {
+    text-decoration: line-through;
+}
+
+.remove-task:hover {
+    text-decoration: line-through;
+    color: #FFFFBB;
+    background-color: #CCCCFF;
+}
