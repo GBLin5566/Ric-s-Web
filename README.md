@@ -1,2 +1,2 @@
-# Ric-s-Web-
+# Ric-s-Web
 Several tiny trial
