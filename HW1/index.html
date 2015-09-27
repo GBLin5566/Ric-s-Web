@@ -7,11 +7,13 @@
         <title>Little Input Example</title>
     </head>
     <body>
-        Remain tasks:<br>
-        <div id="remainTasks"></div>
+        <h1>Remain tasks</h1><br>
+        <div id="remainTasks">0</div>
+        <h1>Input tasks</h1><br>
         <form action="#" >
-            Input tasks:<br>
-            <input type="text" id="enterInput" onkeydown="return handleEnter(event)" />
+            <input type="text" id="enterInput" value="Some tasks here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Some tasks here';}" 
+            onkeydown="return handleEnter(event)"/>
+            <!-- <input type="text" id="enterInput" onkeydown="return handleEnter(event)" /> -->
             <br>
         </form>
     </body>

@@ -1,5 +1,8 @@
 
+
 var remainTodo = 0;
+
+
 function handleEnter (e) {
     var text = document.getElementById("enterInput");
     if (e.keyCode === 13 && text.value != "") {
@@ -22,11 +25,19 @@ function handleMouseDownTasks (li) {
     if(li.className != 'remove-task'){
         li.className = 'remove-task';
         refreshTodo(-1);
+        var btn = document.createElement("button");
+        btn.className = 'remove-btn';
+        btn.addEventListener("mousedown", function(){removeTasks(li)}, false);
+        btn.appendChild(document.createTextNode("X"));
+        li.appendChild(btn);
     }
 }
 
 function refreshTodo (num){
     remainTodo += num;
-    console.log(remainTodo);
     document.getElementById('remainTasks').innerHTML = remainTodo;
+}
+
+function removeTasks (li) {
+    li.parentNode.removeChild(li);
 }

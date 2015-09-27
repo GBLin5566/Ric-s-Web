@@ -1,4 +1,28 @@
 
+body {
+    background-image: url("bg-11-full.jpg");
+}
+
+#remainTasks {
+    padding-left: 15px;
+    font-size: 90px;
+}
+
+.remove-btn {
+    float: right;
+    width: 20px;
+    height: 20px;
+    border: 1px, solid;
+    border-radius: 50%;
+}
+
+.new-task {
+    border-style: groove;
+    border-width: 5px;
+    padding: 2px;
+    list-style-image: url("circle.png");
+}
+
 .new-task:hover {
     color: #FFFFBB;
     background-color: #CCCCFF;
@@ -6,10 +30,13 @@
 
 .remove-task {
     text-decoration: line-through;
+    border-style: ridge;
+    border-width: 5px;
+    list-style-image: url("f058.png");
+    padding: 2px;
 }
 
 .remove-task:hover {
-    text-decoration: line-through;
     color: #FFFFBB;
     background-color: #CCCCFF;
 }
