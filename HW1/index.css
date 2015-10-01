@@ -3,6 +3,12 @@ body {
     background-image: url("bg-11-full.jpg");
 }
 
+#myImage {
+    height: 20px;
+    width: 20px;
+    float: right;
+}
+
 #remainTasks {
     padding-left: 15px;
     font-size: 90px;
