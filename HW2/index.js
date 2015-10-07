@@ -1,4 +1,5 @@
 
+// Fix typeof issue
 var getType = function (input) {
 	if (typeof(input) === "function")
 		return "function";
@@ -16,6 +17,7 @@ var getType = function (input) {
 		return typeof(input);
 };
 
+// CLosure test
 var Counter = function() {
 	var count = 0;
 	return {
@@ -25,6 +27,8 @@ var Counter = function() {
 	};
 };
 
+
+// Curring test
 var curringSum = function (input1) {
 	return function(input2) {
 		return function(input3) {
