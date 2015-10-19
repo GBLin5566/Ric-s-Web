@@ -1,92 +1,108 @@
 class ChatAPP extends React.Component {
     constructor(props) {
         super(props);
-        const MacSecurity4Chrome = "open -a Google\ Chrome --args --disable-web-security -–allow-file-access-from-files"
         this.state = {
-            textHistory: [
-                ["haha", "appear on the screen?"],
-                ["I'm the second one"],
-                ["React.js is hard", "and my computer cannot connect to internet", "damn it"]
-                ],
-            currentUser: 1
+            chatHistory: [['string1', 'string', 'string ends'], ['string2', 'string', 'string ends'], ['string3', 'string', 'string ends']],
+            currentUser: 1,
+            userName: ['Sia', 'Dan', 'GG輪班救台灣']
         };
     }
-    render() {
-        return {
-            <div>
-                <section className="chatapp">
-                    <TheadList />
-                    <MessageList />
-                </section>
-            </div>
-        };
+
+    handleChangeUser(val){
+        this.setState({
+            currentUser: val
+        });
     }
+
+    render(){
+        return (
+                <div>
+                    <TheadList 
+                    userName={this.state.userName}
+                    />
+                    <MessageList 
+                    chatHistory={this.state.chatHistory}
+                    currentUser={this.state.currentUser}
+                    />
+                </div>
+                );
+    }    
 }
 
 class TheadList extends React.Component {
+    renderTheadItem(item, i) {
+        return (
+                <TheadItem 
+                index = {i}
+                userName = {this.props.userName[i]}
+                />
+                );
+    }
     render() {
-        return {
-            <div>
-                <ul className="theadlist">
-                    <TheadItem
-                        index=1
-                        name="Tom"
-                    >
-                    <TheadItem
-                        index=2
-                        name="John"
-                    >
-                    <TheadItem
-                        index=3
-                        name="Joe"
-                    >
-                </ul>
-            </div>
-        };
+        const {userName} = this.props;
+        return (
+                <div>
+                    <ul className="thead-list">{userName.map(this.renderTheadItem, this)}</ul>
+                </div>
+                );
     }
 }
 
 
 class TheadItem extends React.Component {
+    getUserName() {
+        return this.props.userName;
+    }
     render() {
-        const {index, name, isPicked} = this.state;
-        return {
-            <div className="theaditem">
-                <h3>{name}</h3>
-                I am {isPicked}
-            </div>
-        };
+        const {index, userName} = this.props;
+        return(
+                <div className="thead-item">
+                    {this.getUserName()}
+                </div>
+                );
     }
 }
-TheadItem.propTypes = {
-    index: React.PropTypes.number,
-    name: React.PropTypes.string,
-    isPicked: React.PropTypes.bool
-};
 
 class MessageList extends React.Component {
+    renderMessageItem(i) {
+        return(
+                <MessageItem
+                chatHistory = {this.props.chatHistory[i]}
+                />
+                );
+    }
     render() {
-        return {};
+        const {currentUser, chatHistory} = this.props;
+        return (
+                <div className="message-list">
+                    <MessageItem
+                    chatHistory = {chatHistory[currentUser]}
+                    />
+                </div>
+                );
     }
 }
 
 class MessageItem extends React.Component {
-    render() {
-        const {text} = this.state;
-        var toShow = "";
-        for (var i =0; i < text.length; i ++) {
-            toShow += text[i];
-            toShow += "<br>";
-        }
-        return {
-            <div>
-                <p>{toShow}</p>
-            </div>
-        };
+    renderChat(i){
+        return(
+                <p>{this.props.chatHistory[i]}</p>
+                );
     }
+    render() {
+        const {chatHistory} = this.props;
+        return(
+                <div>
+                    {chatHistory.map(function(chat){
+                        return (
+                            <div>
+                                {chat}
+                            </div>
+                            );
+                                                   })}
+                </div>
+                );
+    };
 }
-MessageItem.propTypes = {
-    text: React.PropTypes.string
-};
 
 ReactDOM.render(<ChatAPP />, document.getElementById('root'));
