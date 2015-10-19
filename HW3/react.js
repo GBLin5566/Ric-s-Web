@@ -3,7 +3,7 @@ class ChatAPP extends React.Component {
         super(props);
         this.state = {
             chatHistory: [['string1', 'string', 'string ends'], ['string2', 'string', 'string ends'], ['string3', 'string', 'string ends']],
-            currentUser: 1,
+            currentUser: 0,
             userName: ['Sia', 'Dan', 'GG輪班救台灣']
         };
     }
@@ -19,6 +19,7 @@ class ChatAPP extends React.Component {
                 <div>
                     <TheadList 
                     userName={this.state.userName}
+                    handleChangeUser={this.handleChangeUser}
                     />
                     <MessageList 
                     chatHistory={this.state.chatHistory}
@@ -30,11 +31,14 @@ class ChatAPP extends React.Component {
 }
 
 class TheadList extends React.Component {
+
+
     renderTheadItem(item, i) {
         return (
                 <TheadItem 
                 index = {i}
                 userName = {this.props.userName[i]}
+                onClick = {function(){console.log(i);}}
                 />
                 );
     }
@@ -54,9 +58,12 @@ class TheadItem extends React.Component {
         return this.props.userName;
     }
     render() {
-        const {index, userName} = this.props;
+        const {index, userName, onClick} = this.props;
         return(
-                <div className="thead-item">
+                <div 
+                className="thead-item"
+                onClick = {onClick}
+                >
                     {this.getUserName()}
                 </div>
                 );
@@ -100,6 +107,9 @@ class MessageItem extends React.Component {
                             </div>
                             );
                                                    })}
+                    <input
+                    className="chat-input"
+                    />
                 </div>
                 );
     };
