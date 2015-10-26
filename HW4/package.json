@@ -1,9 +1,10 @@
 {
   "name": "hw4",
   "version": "1.0.0",
-  "description": "",
+  "description": "Chat room implemented by npm & React",
   "main": "index.js",
   "scripts": {
+    "start": "node devServer.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "GBLin",
@@ -23,5 +24,13 @@
     "webpack": "^1.12.2",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.4.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GBLin5566/Ric-s-Web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GBLin5566/Ric-s-Web/issues"
+  },
+  "homepage": "https://github.com/GBLin5566/Ric-s-Web#readme"
 }
