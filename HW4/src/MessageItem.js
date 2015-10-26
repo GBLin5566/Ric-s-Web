@@ -1,4 +1,6 @@
 
+var React = require('react');
+
 class MessageItem extends React.Component {
     render() {
         const { mine, text} = this.props;

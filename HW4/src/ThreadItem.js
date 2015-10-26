@@ -1,4 +1,6 @@
 
+var React = require('react');
+
 class ThreadItem extends React.Component {
     render() {
         const {name, content, onClick} = this.props;

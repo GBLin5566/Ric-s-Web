@@ -1,0 +1,26 @@
+
+.chat-app{
+    height: 100vh;
+}
+
+.chat-app-left{
+    float: left;
+    width: calc(35% - 1px);
+    height: inherit;
+    border-right: 1px solid grey;
+}
+
+.chat-app-right {
+    float: left;
+    width: 65%;
+}
+
+.heading {
+    height: 60px;
+    text-align: center;
+}
+
+.thread-item {
+    position:relative;
+    height: 70px;
+}

@@ -1,7 +1,7 @@
 
 //import {ThreadItem} from './ThreadItem';
 //import {MessageItem} from './MessageItem';
-
+var React = require('react');
 var ThreadItem = require('./ThreadItem');
 var MessageItem = require('./MessageItem');
 
@@ -67,7 +67,7 @@ class ChatApp extends React.Component {
     }
 
     renderThreadItem(thread, i){
-        const {name, messages} = this.state;
+        const {name, messages} = thread;
         const lastMessage = messages[messages.length - 1];
         return (
             <ThreadItem
@@ -112,7 +112,7 @@ class ChatApp extends React.Component {
                         <input
                             className="new-message"
                             type="text"
-                            value={newMessage}
+                            value={inputMessage}
                             onChange={this.handleNewMessageChange.bind(this)}
                             onKeyDown={this.handleInput.bind(this)}
                         />
