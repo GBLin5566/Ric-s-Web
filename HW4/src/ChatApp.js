@@ -1,6 +1,9 @@
 
-import {ThreadItem} from './ThreadItem';
-import {MessageItem} from './MessageItem';
+//import {ThreadItem} from './ThreadItem';
+//import {MessageItem} from './MessageItem';
+
+var ThreadItem = require('./ThreadItem');
+var MessageItem = require('./MessageItem');
 
 const initialState = {
     inputMessage: '',
@@ -30,7 +33,7 @@ const initialState = {
     currentUser: 0
 };
 
-export class ChatApp extends React.Component {
+class ChatApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = initialState;
@@ -120,3 +123,4 @@ export class ChatApp extends React.Component {
     }
 }
 
+module.exports = ChatApp;

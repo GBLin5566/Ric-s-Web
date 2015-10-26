@@ -1,5 +1,5 @@
 
-export class ThreadItem extends React.Component {
+class ThreadItem extends React.Component {
     render() {
         const {name, content, onClick} = this.props;
         return (
@@ -15,3 +15,4 @@ export class ThreadItem extends React.Component {
     }
 }
 
+module.exports = ThreadItem;
