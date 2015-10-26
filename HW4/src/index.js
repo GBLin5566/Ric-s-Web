@@ -1,4 +1,4 @@
 
-//var ChatApp = require('./ChatApp.js');
+import {ChatApp} from './ChatApp'
 
 ReactDom.render(<ChatApp />, document.getElementById('root'));

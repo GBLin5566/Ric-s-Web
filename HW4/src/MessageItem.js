@@ -1,5 +1,5 @@
 
-class MessageItem extends React.Component {
+export class MessageItem extends React.Component {
     render() {
         const { mine, text} = this.props;
         return (
@@ -10,4 +10,3 @@ class MessageItem extends React.Component {
     }
 }
 
-module.exports = MessageItem;
