@@ -9,14 +9,14 @@ const initialState = {
     inputMessage: '',
     threads: [
     {
-        name: 'John',
+        name: 'Lennon',
         messages: [
             {mine: false, text: 'Hi!'},
             {mine: true, text: 'Hi?'}
         ]
     },
     {
-        name: 'Ann',
+        name: 'Jude',
         messages: [
             {mine: true, text: 'Hello'},
             {mine: false, text: 'Hello'},
@@ -26,7 +26,8 @@ const initialState = {
     {
         name: 'TSMC',
         messages: [
-            {mine: false, text: 'Click the link to get the job!'}
+            {mine: false, text: 'Click the link to get the job!'},
+            {mine: false, text: 'http://www.tsmc.com.tw/'}
         ]
     }
     ],

@@ -10,7 +10,7 @@ class ThreadItem extends React.Component {
                     {name}
                 </div>
                 <div>
-                    <span>{content}</span>
+                    <span className="thread-item-content">{content}</span>
                 </div>
             </li>
                 );

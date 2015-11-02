@@ -24,3 +24,22 @@
     position:relative;
     height: 70px;
 }
+
+.thread-item-content {
+    font-size:6px;
+    font-family: Times;
+}
+
+.message-item-mine{
+    padding-left:25px;
+    text-align: right;
+}
+
+.message-item-other{
+    padding-left:25px;
+    text-align: left;
+}
+
+.new-message {
+    width: 100%;
+}
